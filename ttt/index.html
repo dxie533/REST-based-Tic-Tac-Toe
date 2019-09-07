@@ -1,0 +1,47 @@
+
+<html>
+<head>
+<link rel = "stylesheet" type = "text/css" href = "ttt.css">
+<script type = "text/javascript" src = "ttt.js">
+</script>
+</head>
+<body>
+<br>
+<div id = "formDisplay">
+<form id = "myform" action="index.html" method="post">
+Name: <input type="text" name="name"><br>
+<input id = "submitButton" type="submit" value = "Submit">
+</form>
+</div>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	$name = $_POST["name"];
+	echo "Hello " . $name . ", ";
+	echo date("Y/m/d") . "<br>";
+}
+?>
+<table id = "table">
+  <tr>
+    <td><button id = "0" onclick = "playerAction('0')">_</button></td>
+    <td><button id = "1" onclick = "playerAction('1')">_</button></td>
+    <td><button id = "2" onclick = "playerAction('2')">_</button></td>
+  </tr>
+  <tr>
+    <td><button id = "3" onclick = "playerAction('3')">_</button></td>
+    <td><button id = "4" onclick = "playerAction('4')">_</button></td>
+    <td><button id = "5" onclick = "playerAction('5')">_</button></td>
+  </tr>
+  <tr>
+    <td><button id = "6" onclick = "playerAction('6')">_</button></td>
+    <td><button id = "7" onclick = "playerAction('7')">_</button></td>
+    <td><button id = "8" onclick = "playerAction('8')">_</button></td>
+  </tr>
+</table> 
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	echo "<script>hideForms();</script>";
+}
+?>
+<div id = "winnerDiv"></div>
+</body>
+</html> 

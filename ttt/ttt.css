@@ -1,0 +1,12 @@
+body {
+background-color: grey;
+}
+
+#submitButton {
+text-align: center;
+background-color: orange;
+}
+
+#table{
+display: none;
+}
